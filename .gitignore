@@ -3,4 +3,5 @@ oop/introcs-data/
 oop/introcs-python/
 oop/introcs.egg-info/
 oop/stdlib-python/
+oop/__pycache__/
 
