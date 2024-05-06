@@ -1,0 +1,2 @@
+AGAGATGCATAGCGCATAGCATAGCTAGATGTGCTAGC
+https://introcs.cs.princeton.edu/python/30oop/
