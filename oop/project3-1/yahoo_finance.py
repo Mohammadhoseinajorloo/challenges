@@ -3,7 +3,8 @@ import sys
 
 def _readHtml(stockSymbol):
     website = 'https://finance.yahoo.com/quote/'
-    page = InStream(website + stockSymbol + '/')
+    end = '?.tsrc=fin-srch'
+    page = InStream(website + stockSymbol + end)
     html = page.readAll()
     return html
 
