@@ -5,8 +5,8 @@ def _readHtml(stockSymbol):
     website = 'https://finance.yahoo.com/quote/'
     end = '?.tsrc=fin-srch'
     page = InStream(website + stockSymbol + end)
-    html = page.readAll()
-    return html
+    html1 = page.readAll()
+    return html1
 
 def priceOf(stockSymbol):
     html = _readHtml(stockSymbol)
