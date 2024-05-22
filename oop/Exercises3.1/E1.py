@@ -1,3 +1,4 @@
+# 1.Compose a program that takes a float command-line argument w, creates four Charge objects (each with charge value 1.0) that are each distance w in each of the four cardinal directions from (.5, .5), and writes the potential at (0.25, 0.5).
 import sys
 from charge import Charge
 
@@ -7,7 +8,7 @@ def main():
     cy = .5
 
     px = .25
-    py = .5 
+    py = .5
 
     ch1 = Charge(cx + w, cy, 1.0)
     ch2 = Charge(cx, cy + w, 1.0)
