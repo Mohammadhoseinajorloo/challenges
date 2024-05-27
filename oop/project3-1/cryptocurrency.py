@@ -15,11 +15,15 @@ class JSONDecodeError(BaseException):
 class KeyJsonExeption(BaseException):
      pass
 
+# this exeption for error negative value in calculate_perfit_or_loss function
+class NegaticException(BaseException):
+     pass
+
 # ------------------------------------------
 
 
 
-# Color
+# Color class
 # -------------------------------------------
 
 # this class for display gained, loss and warnings in error and more checking errors
@@ -44,6 +48,7 @@ def read_api(api):
     except:
         raise JSONDecodeError(f'Please check api,your input api is {bcolors.WARNING}{api}{bcolors.ENDC}')
 
+
 # fide price and volomes in json api
 def get_perice(json_):
      try:
@@ -57,6 +62,12 @@ def get_perice(json_):
 
 # calculate perfit and loss
 def calculate_perfit_or_loss(number_of_shares, purchase_price, sale_price):
+    number_of_shares_condition = number_of_shares < 0
+    purchase_price_condition = purchase_price < 0
+    sale_price_condition = sale_price < 0
+    if number_of_shares_condition or purchase_price_condition or sale_price_condition:
+        raise NegaticException(f"Can not negative price and volum a things.your vlaue is {bcolors.WARNING}'number of shares :  {number_of_shares} , purchase_price : {purchase_price}, sale_price: {sale_price}'{bcolors.ENDC}")
+
     buy = float(number_of_shares * purchase_price)
     first_commission = float(buy * .03)
 
